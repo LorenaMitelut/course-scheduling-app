@@ -1,7 +1,6 @@
 package com.endava.courseschedulingapp.controllers;
 
 import com.endava.courseschedulingapp.entities.User;
-import com.endava.courseschedulingapp.exceptions.ValidationModelException;
 import com.endava.courseschedulingapp.services.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

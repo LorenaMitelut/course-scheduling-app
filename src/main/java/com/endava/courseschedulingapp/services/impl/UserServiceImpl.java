@@ -1,6 +1,5 @@
 package com.endava.courseschedulingapp.services.impl;
 
-import com.endava.courseschedulingapp.entities.Course;
 import com.endava.courseschedulingapp.entities.User;
 import com.endava.courseschedulingapp.entities.UserRole;
 import com.endava.courseschedulingapp.exceptions.NotFoundException;

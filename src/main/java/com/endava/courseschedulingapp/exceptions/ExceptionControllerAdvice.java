@@ -2,7 +2,6 @@ package com.endava.courseschedulingapp.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -18,11 +17,5 @@ public class ExceptionControllerAdvice {
     public ResponseEntity<String> handleValidationModelException(ValidationModelException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
     }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleNotValidException(MethodArgumentNotValidException e) {
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-    }
-
 }
 
