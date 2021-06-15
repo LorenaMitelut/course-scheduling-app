@@ -51,8 +51,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User update(Long userId) {
-        return null;
+    public User update(User user) {
+        User savedUser = getUserById(user.getId());
+
+        Optional.ofNullable(user.getFirstName()).ifPresent(savedUser::setFirstName);
+        Optional.ofNullable(user.getLastName()).ifPresent(savedUser::setLastName);
+        Optional.ofNullable(user.getEmail()).ifPresent(savedUser::setEmail);
+
+        return userRepository.save(savedUser);
     }
 
     @Override
@@ -72,7 +78,7 @@ public class UserServiceImpl implements UserService {
             throw new ValidationModelException(String.format("An user with the Username '%s' already exists.", user.getUsername()));
         }
 
-        if(user.getPassword() != null && user.getPassword().length() < 6) {
+        if (user.getPassword() != null && user.getPassword().length() < 6) {
             throw new ValidationModelException("The password must have a length of minimum 6 characters");
         }
     }

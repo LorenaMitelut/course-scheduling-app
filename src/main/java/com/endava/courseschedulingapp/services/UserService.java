@@ -11,7 +11,8 @@ public interface UserService {
     User createTrainer(User user);
 
     User getUserById(Long userId);
-    User update(Long userId);
+
+    User update(User user);
 
     Optional<User> findUserByUsername(String username);
 

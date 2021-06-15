@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers(HttpMethod.DELETE, "/courses").hasRole(UserRole.ADMIN.getRole())
                 .mvcMatchers(HttpMethod.POST, "/courses").hasRole(UserRole.ADMIN.getRole())
                 .mvcMatchers(HttpMethod.PUT, "/courses/**").hasRole(UserRole.TRAINER.getRole())
-                .antMatchers("/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/swagger-ui/**","/webjars/**").permitAll()
+                .antMatchers("/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/swagger-ui/**", "/webjars/**").permitAll()
                 .anyRequest().authenticated();
 
         http.csrf().disable();
